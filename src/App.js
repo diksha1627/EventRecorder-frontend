@@ -16,8 +16,8 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/auth" element={<Auth setToken={saveToken} />} />
-        <Route path="/" element={token ? <EventRecorder token={token} setToken={setToken} /> : <Navigate to="/login" />} />
-        <Route path="/dashboard" element={token ? <Dashboard token={token} setToken={setToken} /> : <Navigate to="/login" />} />
+        <Route path="/" element={token ? <EventRecorder token={token} setToken={setToken} /> : <Navigate to="/auth" />} />
+        <Route path="/dashboard" element={token ? <Dashboard token={token} setToken={setToken} /> : <Navigate to="/auth" />} />
       </Routes>
     </Router>
   );
